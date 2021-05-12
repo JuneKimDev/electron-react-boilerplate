@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import styles from './mainFrame.scss';
+import styles from './mainFrame.module.scss';
 import Navbar from './mainFrameViewNavbar';
 
 const presenter = (props: { children?: ReactNode[] | ReactNode }) => {
