@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './mainFrame.scss';
+import styles from './mainFrame.module.scss';
 
 const view = () => {
   return (
