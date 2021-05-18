@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './sagas';
 import rootReducer from './reducers';
@@ -7,16 +7,7 @@ import rootReducer from './reducers';
 export const configureStore = () => {
   const sagaMiddleware = createSagaMiddleware();
   const middlewares = [sagaMiddleware];
-  const enhancer =
-    // only client-side on non-production stage should enable redux debugger
-    process.env.NODE_ENV !== 'production'
-      ? compose(
-          applyMiddleware(...middlewares),
-          (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-            (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-        )
-      : applyMiddleware(...middlewares);
-  const store = createStore(rootReducer, enhancer);
+  const store = createStore(rootReducer, applyMiddleware(...middlewares));
   sagaMiddleware.run(rootSaga);
 
   return store;
