@@ -1,9 +1,9 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 // import GTag from './gtag';
-import { IMeta } from '../../types';
+import { IPropsMeta } from './metaType';
 
-const Mata = (props: IMeta) => {
+const Mata = (props: IPropsMeta) => {
   const { title, url, desc } = props;
   const orgName = 'JuneKimDev';
 

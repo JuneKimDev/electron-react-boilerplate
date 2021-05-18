@@ -1,10 +1,18 @@
 import { Reducer } from 'redux';
 import { IAction } from '../../types';
 
-const initialState = {};
+const initialState = {
+  testStr: '',
+};
 
 const reducer: Reducer<any, IAction> = (state = initialState, action) => {
-  return state;
+  switch (action.type) {
+    case 'placeholder':
+      console.log(action.payload);
+      return { ...state, testStr: action.payload };
+    default:
+      return state;
+  }
 };
 
 export default reducer;
