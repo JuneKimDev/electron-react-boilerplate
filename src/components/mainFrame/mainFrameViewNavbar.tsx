@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './mainFrame.module.scss';
 
-const view = () => {
+const View = () => {
   return (
     <nav className={styles.navbarVertical}>
       <Link to="/">
@@ -12,4 +12,4 @@ const view = () => {
   );
 };
 
-export default view;
+export default View;

@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 import Presenter from './mainFramePresenter';
-// import { useTypedSelector } from '../../controllers';
 
-const interactor = (props: { children?: ReactNode[] | ReactNode }) => {
+// eslint-disable-next-line react/require-default-props
+const Interactor = (props: { children?: ReactNode[] | ReactNode }) => {
   const { children } = props;
   return <Presenter {...{ children }} />;
 };
 
-export default interactor;
+export default Interactor;
