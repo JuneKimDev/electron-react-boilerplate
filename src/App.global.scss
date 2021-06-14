@@ -6,6 +6,9 @@
 // Document style
 :root {
   @include css-var($global-var);
+}
+
+#root {
   min-height: 100vh;
   display: flex;
   align-items: stretch;
@@ -23,8 +26,6 @@
 }
 
 body {
-  width: 100%;
-  height: 100%;
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
   @include var(color, font-color);
